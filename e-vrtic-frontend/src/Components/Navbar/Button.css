@@ -1,0 +1,22 @@
+:root {
+    --primary: orange;
+  }
+  
+  .btn {
+    padding: 8px 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    background-color: var(--primary);
+    width: auto;
+    height: 60px;
+  }
+  
+  .btn:hover {
+    background-color: rgba(223, 151, 18, 0.5);
+    color: white;
+    border-radius: 4px;
+  }
