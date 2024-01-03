@@ -5,7 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.evrtic.models.Korisnik;
 
+
 @Repository
 public interface KorisnikRepository extends JpaRepository<Korisnik, Long> {
 
+	Korisnik findByUsername(String username);
 }

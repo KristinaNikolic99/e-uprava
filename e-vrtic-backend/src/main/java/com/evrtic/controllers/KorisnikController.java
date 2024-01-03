@@ -6,9 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.evrtic.dtos.KorisnikDto;
 import com.evrtic.models.Korisnik;
 import com.evrtic.services.KorisnikService;
 
@@ -22,5 +26,23 @@ public class KorisnikController {
 	@GetMapping("/korisnici")
 	public ResponseEntity<List<Korisnik>> getAllKorisniks() {
 		return new ResponseEntity<List<Korisnik>>(korisnikService.getAllKorisniks(), HttpStatus.OK);
+	}
+	
+	@PostMapping("/register")
+	public ResponseEntity<Korisnik> register(@RequestBody KorisnikDto korisnikDto) {
+		Korisnik korisnik = korisnikService.register(korisnikDto);
+		if(korisnik == null) {
+			return new ResponseEntity<Korisnik>(HttpStatus.BAD_REQUEST);
+		}
+		return new ResponseEntity<Korisnik>(korisnik, HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/logIn")
+	public ResponseEntity<Korisnik> logIn(@RequestParam String username, @RequestParam String password) {
+		Korisnik korisnik = korisnikService.logIn(username, password);
+		if (korisnik == null) {
+			return new ResponseEntity<Korisnik>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Korisnik>(korisnik, HttpStatus.OK);
 	}
 }
