@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import '../Navbar/Button.css'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const history = useHistory();
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -32,14 +33,14 @@ function Navbar() {
       <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           E-VRTIC
-          <i class='fab fa-firstdraft' />
+          <i className='fab fa-firstdraft' />
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
-            <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
               Home
             </Link>
           </li>
@@ -76,9 +77,17 @@ function Navbar() {
             </Link>
           </li>
           <li className='nav-item'>
-             <Link to='register'>
-             <button className='btn'>Sign Up</button>
-           </Link>
+              {
+                localStorage.getItem("korisnik") ? 
+                <button className='btn' onClick={() => {
+                  localStorage.clear();
+                  history.push('/');
+                }}>Sign Out</button> :
+                <button className='btn' onClick={() => {
+                  history.push('/login')
+                }}
+                  >Sign In</button>
+              } 
           </li>
         </ul>
         

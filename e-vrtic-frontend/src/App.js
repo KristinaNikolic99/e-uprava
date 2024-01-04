@@ -14,11 +14,6 @@ function App() {
       <div>
         
         <Switch>
-          <Route path="/home">
-            <Navbar/>
-            <Home/>
-            <Footer/>
-          </Route>
           <Route path="/register">
             <RegisterForm/>
           </Route>
@@ -32,8 +27,13 @@ function App() {
             <Vrtici/>
             <Footer/>
           </Route>
-          <Route path="/">
+          <Route path="/login">
             <LoginForm/>
+          </Route>
+          <Route path="/" >
+            <Navbar/>
+            <Home/>
+            <Footer/>
           </Route>
           
         </Switch>
