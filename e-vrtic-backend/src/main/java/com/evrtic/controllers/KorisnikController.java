@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +19,7 @@ import com.evrtic.services.KorisnikService;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin
 public class KorisnikController {
 
 	@Autowired
@@ -39,6 +41,7 @@ public class KorisnikController {
 	
 	@GetMapping("/logIn")
 	public ResponseEntity<Korisnik> logIn(@RequestParam String username, @RequestParam String password) {
+		System.out.println("Da li uopste dodje dovde?");
 		Korisnik korisnik = korisnikService.logIn(username, password);
 		if (korisnik == null) {
 			return new ResponseEntity<Korisnik>(HttpStatus.NOT_FOUND);
