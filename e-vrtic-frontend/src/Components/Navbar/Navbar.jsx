@@ -41,7 +41,7 @@ function Navbar() {
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              Home
+              Početna
             </Link>
           </li>
           <li
@@ -50,11 +50,11 @@ function Navbar() {
             onMouseLeave={onMouseLeave}
           >
             <Link
-              to='/services'
+              to='/podaci'
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Services <i className='fas fa-caret-down' />
+              Podaci <i className='fas fa-caret-down' />
             </Link>
             {dropdown && <Dropdown />}
           </li>
@@ -78,9 +78,9 @@ function Navbar() {
           </li>
           <li className='nav-item'>
               {
-                localStorage.getItem("korisnik") ? 
+                sessionStorage.getItem("korisnik") ? 
                 <button className='btn' onClick={() => {
-                  localStorage.clear();
+                  sessionStorage.clear();
                   history.push('/');
                 }}>Sign Out</button> :
                 <button className='btn' onClick={() => {

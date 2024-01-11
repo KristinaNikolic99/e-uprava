@@ -1,22 +1,17 @@
 export const MenuItems = [
     {
-      title: 'Marketing',
-      path: '/marketing',
+      title: 'O lokacijama i objektima, prostorijama',
+      path: '/lokacije',
       cName: 'dropdown-link'
     },
     {
-      title: 'Consulting',
-      path: '/consulting',
+      title: 'O broju zaposlenih',
+      path: '/zaposleni',
       cName: 'dropdown-link'
     },
     {
-      title: 'Design',
-      path: '/design',
+      title: 'O vaspitnim grupama',
+      path: '/vaspitne-grupe',
       cName: 'dropdown-link'
     },
-    {
-      title: 'Development',
-      path: '/development',
-      cName: 'dropdown-link'
-    }
   ];

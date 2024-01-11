@@ -69,18 +69,6 @@
     border-radius: 15px 15px 15px 15px;
 }
 
-.car1 {
-    background-image: url('../../Components/Assets/car1.jpg');
-}
-
-.car2 {
-    background-image: url('../../Components/Assets/car2.jpg');
-}
-
-.car3 {
-    background-image: url('../../Components/Assets/car3.jpg');
-}
-
 .card:hover {
     background: transparent;
     backdrop-filter: brightness(10%);
