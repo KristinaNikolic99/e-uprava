@@ -17,24 +17,24 @@ function Home() {
         </div>
       
       </div>
-      <div class="achievements">
+      <div className="achievements">
 
-        <div class="work">
-          <i class="fas fa-palette"></i>
-          <p class="work-heading">Forma</p>
-          <p class="work-text">Popunite jednostavnu online formu, sa svim relevantnim podacima, kao i overenom dokumentacijom.</p>
+        <div className="work">
+          <i className="fas fa-palette"></i>
+          <p className="work-heading">Forma</p>
+          <p className="work-text">Popunite jednostavnu online formu, sa svim relevantnim podacima, kao i overenom dokumentacijom.</p>
         </div>
 
-        <div class="work">
-          <i class="fas fa-book"></i>
-          <p class="work-heading">Izbor vrtića</p>
-          <p class="work-text">Mogućnost odabira željenog vrtića izborom odgovarajuće države, grada, opštine i naziva.</p>
+        <div className="work">
+          <i className="fas fa-book"></i>
+          <p className="work-heading">Izbor vrtića</p>
+          <p className="work-text">Mogućnost odabira željenog vrtića izborom odgovarajuće države, grada, opštine i naziva.</p>
         </div>
         
-        <div class="work">
-          <i class="fas fa-home"></i>
-          <p class="work-heading">Registracija</p>
-          <p class="work-text">Registrujte dete u željeni vrtić elektronskim putem, bez potrebe čekanja u velikim redovima.</p>
+        <div className="work">
+          <i className="fas fa-home"></i>
+          <p className="work-heading">Registracija</p>
+          <p className="work-text">Registrujte dete u željeni vrtić elektronskim putem, bez potrebe čekanja u velikim redovima.</p>
         </div>
       </div>
      </div>

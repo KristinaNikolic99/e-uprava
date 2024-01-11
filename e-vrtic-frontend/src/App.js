@@ -7,18 +7,16 @@ import Home from './Pages/HomePage/Home';
 import { Footer } from './Components/Footer/Footer';
 import { Contact } from './Pages/ContactPage/Contact';
 import { Vrtici } from './Pages/VrticiPage/Vrtici';
+import {ChildRegistration} from './Pages/ChildRegistrationPage/ChildRegistration';
+import { Lokacije } from './Components/Lokacije/Lokacije';
 
 function App() {
+
   return (
     <Router>
       <div>
         
         <Switch>
-          <Route path="/home">
-            <Navbar/>
-            <Home/>
-            <Footer/>
-          </Route>
           <Route path="/register">
             <RegisterForm/>
           </Route>
@@ -32,8 +30,23 @@ function App() {
             <Vrtici/>
             <Footer/>
           </Route>
-          <Route path="/">
+          <Route path="/lokacije">
+            <Navbar/>
+            <Lokacije/>
+            <Footer/>
+          </Route>
+          <Route  path="/child-registration">
+            <Navbar/>
+            <ChildRegistration/>
+            <Footer/>
+          </Route>
+          <Route path="/login">
             <LoginForm/>
+          </Route>
+          <Route path="/" >
+            <Navbar/>
+            <Home/>
+            <Footer/>
           </Route>
           
         </Switch>

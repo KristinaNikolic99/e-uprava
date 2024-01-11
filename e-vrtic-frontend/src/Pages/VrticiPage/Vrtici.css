@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    
+    max-width: 1500px;
 }
 
 .card {
@@ -67,18 +67,6 @@
     margin-bottom: 15px;
     background-size: cover;
     border-radius: 15px 15px 15px 15px;
-}
-
-.car1 {
-    background-image: url('../../Components/Assets/car1.jpg');
-}
-
-.car2 {
-    background-image: url('../../Components/Assets/car2.jpg');
-}
-
-.car3 {
-    background-image: url('../../Components/Assets/car3.jpg');
 }
 
 .card:hover {
