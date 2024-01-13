@@ -31,7 +31,12 @@ export const Vrtici = () => {
                         <p style={{textAlign: "justify"}}>
                             {vrtic.opis}
                         </p>
-                        <a href='' onClick={() => {history.push('/child-registration')}}>UPIŠI ME</a>
+                        <a href='' onClick={(e) => {
+                            e.preventDefault();
+                            sessionStorage.getItem("korisnik") ?
+                            history.push('/child-registration') :
+                            history.push('/login')
+                        }}>UPIŠI ME</a>
                     </div>
                 ))
             }

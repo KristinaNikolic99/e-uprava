@@ -9,6 +9,8 @@ import { Contact } from './Pages/ContactPage/Contact';
 import { Vrtici } from './Pages/VrticiPage/Vrtici';
 import {ChildRegistration} from './Pages/ChildRegistrationPage/ChildRegistration';
 import { Lokacije } from './Components/Lokacije/Lokacije';
+import { Zaposleni } from './Components/Zaposleni/Zaposleni';
+import { VaspitneGrupe } from './Components/VaspitneGrupe/VaspitneGrupe';
 
 function App() {
 
@@ -35,7 +37,17 @@ function App() {
             <Lokacije/>
             <Footer/>
           </Route>
-          <Route  path="/child-registration">
+          <Route path="/zaposleni">
+            <Navbar/>
+            <Zaposleni/>
+            <Footer/>
+          </Route>
+          <Route path="/vaspitne-grupe">
+            <Navbar/>
+            <VaspitneGrupe/>
+            <Footer/>
+          </Route>
+          <Route  path="/child-registration" >
             <Navbar/>
             <ChildRegistration/>
             <Footer/>
