@@ -41,7 +41,6 @@ public class KorisnikController {
 	
 	@GetMapping("/logIn")
 	public ResponseEntity<Korisnik> logIn(@RequestParam String username, @RequestParam String password) {
-		System.out.println("Da li uopste dodje dovde?");
 		Korisnik korisnik = korisnikService.logIn(username, password);
 		if (korisnik == null) {
 			return new ResponseEntity<Korisnik>(HttpStatus.NOT_FOUND);
