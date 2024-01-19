@@ -16,7 +16,7 @@
     min-height: 100vh;
   }
   
-  .new_home_web .text-blk.heading {
+  .new_home_web .heading {
     font-size: 36px;
     line-height: 55px;
     font-weight: 600;
@@ -42,6 +42,7 @@
     padding-right: 0px;
     padding-bottom: 25px;
     padding-left: 10px;
+    border-radius: 30px;
   }
   
   .new_home_web .send:hover {
@@ -59,7 +60,7 @@
     color: white;
     font-weight: 600;
     background-color: orange;
-    width: 80%;
+    width: 100%;
     text-align: center;
     padding-top: 15px;
     padding-right: 0px;
@@ -69,10 +70,7 @@
     margin-right: 0px;
     margin-bottom: 0px;
     margin-left: 0px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-radius: 30px;
   }
   
   .new_home_web .container-block.form-wrapper {
@@ -119,18 +117,12 @@
   .new_home_web .textinput {
     height: 100%;
     width: 100%;
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
+    border-width: 2.5px;
     border-top-style: solid;
     border-right-style: solid;
     border-bottom-style: solid;
     border-left-style: solid;
-    border-top-color: #a2a2a2;
-    border-right-color: #a2a2a2;
-    border-bottom-color: #a2a2a2;
-    border-left-color: #a2a2a2;
+    border-color: #a2a2a2;
     border-image-source: initial;
     border-image-slice: initial;
     border-image-width: initial;
@@ -151,18 +143,9 @@
   .new_home_web .input {
     height: 50px;
     width: 100%;
-    border-top-width: 2.5px;
-    border-right-width: 2.5px;
-    border-bottom-width: 2.5px;
-    border-left-width: 2.5px;
-    border-top-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-top-color: #a2a2a2;
-    border-right-color: #a2a2a2;
-    border-bottom-color: #a2a2a2;
-    border-left-color: #a2a2a2;
+    border-width: 2.5px;
+    border-style: solid;
+    border-color: #a2a2a2;
     border-image-source: initial;
     border-image-slice: initial;
     border-image-width: initial;
@@ -178,6 +161,11 @@
     padding-bottom: 5px;
     padding-left: 15px;
     background-color: #f1f1f1;
+  }
+
+  .send:hover {
+    color: orange;
+    background: orangered;
   }
   
   .new_home_web .responsive-container-block.big-container {
@@ -268,10 +256,6 @@
     margin-bottom: 0px;
     margin-left: 0px;
   }
-  
-  .new_home_web .orangeText {
-    color: orange;
-  }
 
   .new_home_web .imgBG {
     position: absolute;
@@ -286,7 +270,7 @@
   
   .new_home_web .orangeLine {
     height: 10px;
-    width: 160px;
+    width: 300px;
     background-color: orange;
   }
   

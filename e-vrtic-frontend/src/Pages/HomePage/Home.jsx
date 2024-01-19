@@ -10,7 +10,7 @@ function Home() {
         <div className="headerContainer">
           <h1> ELEKTRONSKI VRTIĆ </h1>
           <p className='opis1'> Brz, lak i efikasan način upisa u bilo koji vrtić širom Srbije!</p>
-          <Link to="/menu">
+          <Link to="/vrtici">
             <button> UPIŠI ME </button>
           </Link>
         

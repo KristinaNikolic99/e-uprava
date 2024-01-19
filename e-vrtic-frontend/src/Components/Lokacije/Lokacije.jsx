@@ -7,14 +7,8 @@ import { GlobalFilter } from './GlobalFilter';
 
 export const Lokacije = () => {
 
-    console.log(podaci.PodaciLokacije);
+    //console.log(podaci.PodaciLokacije);
     const data = React.useMemo(() => podaci.PodaciLokacije, []);
-    const defaultColumn = React.useMemo(
-        () => ({
-          Filter: ColumnFilter,
-        }),
-        []
-      );
     const columns = React.useMemo(() => [
         {
             Header: "Naziv Ustanove",

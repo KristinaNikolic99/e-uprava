@@ -30,7 +30,6 @@ table {
     background: rgb(170, 51, 106);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
     table-layout: fixed;
-    overflow: auto;
   }
   th,
   td {

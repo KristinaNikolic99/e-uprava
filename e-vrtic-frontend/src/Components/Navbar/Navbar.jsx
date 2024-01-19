@@ -33,7 +33,7 @@ function Navbar() {
       <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           E-VRTIC
-          <i className='fab fa-firstdraft' />
+          <i className='fas fa-shapes' />
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
