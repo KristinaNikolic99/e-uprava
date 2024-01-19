@@ -21,7 +21,7 @@ export const LoginForm = () => {
             password: password.value,
         }
         }).then(res => {
-            sessionStorage.setItem("korisnik", res.data);
+            sessionStorage.setItem("korisnik", JSON.stringify(res.data));
             toast.success("User Login Successfully!!!", {
                 position: toast.POSITION.TOP_CENTER,
             });
