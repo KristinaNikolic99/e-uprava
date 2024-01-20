@@ -31,4 +31,7 @@ public class Vrtic {
 	
 	@Column(name="slika", nullable = false)
 	private String slika;
+	
+	@Column(name = "grad", nullable = false)
+	private String grad;
 }

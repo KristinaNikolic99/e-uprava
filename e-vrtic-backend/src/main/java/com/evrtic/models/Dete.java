@@ -1,5 +1,6 @@
 package com.evrtic.models;
 
+import java.time.LocalDate;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -7,6 +8,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,12 +21,12 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "korisnik")
-public class Korisnik {
+@Table(name = "dete")
+public class Dete {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long korisnik_id;
+	private long dete_id;
 	
 	@Column(name = "ime", nullable = false)
 	private String ime;
@@ -34,21 +37,18 @@ public class Korisnik {
 	@Column(name = "jmbg", nullable = false)
 	private String jmbg;
 	
-	@Column(name = "drzava", nullable = false)
-	private String drzava;
-	
-	@Column(name = "grad", nullable = false)
-	private String grad;
-	
-	@Column(name = "username", nullable = false, unique = true)
-	private String username;
-	
-	@Column(name = "password", nullable = false)
-	private String password;
+	@Column(name = "datum_rodjenja", nullable = false)
+	private LocalDate datumRodjenja;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "tip_korisnika", nullable = false)
-	private TipKorisnika tipKorisnika;
+	@Column(name = "pol", nullable = false)
+	private Pol pol;
 	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "status", nullable = false)
+	private Status status;
 	
+	@ManyToOne
+	@JoinColumn(name = "korisnik_id")
+	private Korisnik korisnik;
 }
