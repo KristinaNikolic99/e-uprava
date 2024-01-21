@@ -17,6 +17,7 @@ private String ime;
 	private String jmbg;
 	private String drzava;
 	private String grad;
+	private String email;
 	private String username;
 	private String password;
 	
