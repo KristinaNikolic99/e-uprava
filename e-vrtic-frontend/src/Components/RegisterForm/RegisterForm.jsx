@@ -6,6 +6,7 @@ import { Country, City }  from 'country-state-city';
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import jmbg from "regex-jmbg";
 
 export const RegisterForm = () => {
 
@@ -16,7 +17,16 @@ export const RegisterForm = () => {
 
   async function register(e) {
     e.preventDefault();
-    const {name, surname, JMBG, gradovi, username, password} = e.target.elements;
+    const {name, surname, JMBG, gradovi, email, username, password} = e.target.elements;
+    console.log(email.value);
+    if(!jmbg().test(JMBG.value)) {
+        toast.error("Uneseni jmbg je nevalidan, pokusajte ponovo!!!", {
+            position: toast.POSITION.TOP_CENTER,
+        });
+        e.target.reset();
+        return;
+    }
+
     try {
         await axios.post("http://localhost:8080/api/register",{
         ime: name.value,
@@ -24,6 +34,7 @@ export const RegisterForm = () => {
         jmbg: JMBG.value,
         drzava,
         grad: gradovi.value,
+        email: email.value,
         username: username.value,
         password: password.value,
         });
@@ -44,6 +55,7 @@ export const RegisterForm = () => {
     
   return (
     <div className='register'>
+        <ToastContainer/>
         <div className='wrapper'>
         <form onSubmit={register}>
         <h1>Register</h1>
@@ -79,6 +91,9 @@ export const RegisterForm = () => {
                     }
                 </select>
             </div>
+        </div>
+        <div className='input-box'>
+            <input type="email" id='email' placeholder='Email' required/>
         </div>
         <div className='input-box'>
             <input type="text" id='username' placeholder='Username' required/>
