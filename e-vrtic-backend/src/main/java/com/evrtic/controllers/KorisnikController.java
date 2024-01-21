@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.evrtic.dtos.KorisnikDto;
 import com.evrtic.models.Korisnik;
@@ -47,4 +48,13 @@ public class KorisnikController {
 		}
 		return new ResponseEntity<Korisnik>(korisnik, HttpStatus.OK);
 	}
+	
+	@GetMapping("/confirm")
+    public ModelAndView confirmEmailToken(@RequestParam String token){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("message",korisnikService.confirmEmailToken(token));
+        modelAndView.addObject("link","http://localhost:3000/login");
+        modelAndView.setViewName("verifikacija");
+        return modelAndView;
+    }
 }

@@ -43,6 +43,9 @@ public class Korisnik {
 	@Column(name = "username", nullable = false, unique = true)
 	private String username;
 	
+	@Column(name = "email", nullable = false, unique = true)
+	private String email;
+	
 	@Column(name = "password", nullable = false)
 	private String password;
 	
@@ -50,5 +53,7 @@ public class Korisnik {
 	@Column(name = "tip_korisnika", nullable = false)
 	private TipKorisnika tipKorisnika;
 	
+	@Column(name = "status_naloga",nullable = false)
+	private boolean statusNaloga;
 	
 }
