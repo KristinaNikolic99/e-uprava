@@ -71,8 +71,9 @@ export const Lokacije = () => {
     
   return (
     <div className='main'>
-        <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
+        
         <div className='container-lokacije'>
+        <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
             <table {...getTableProps()}>
                 <thead>
                     {headerGroups.map((headerGroup) => (
@@ -99,8 +100,7 @@ export const Lokacije = () => {
                     })}
                 </tbody>
             </table>
-        </div>
-        <div className="pagination">
+            <div className="pagination">
             <p>
                 Page{' '}
                 <strong>
@@ -134,6 +134,8 @@ export const Lokacije = () => {
                 {'>>'}
             </button>
         </div>
+        </div>
+        
     </div>
   )
 }
