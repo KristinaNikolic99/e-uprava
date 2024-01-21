@@ -4,7 +4,7 @@ import BannerImage from '../../Components/Assets/background2.jpg'
 
 export const Contact = () => {
   return (
-    <div className='all'>
+    <div className='all-contact'>
         <div className="new_home_web" >
             <div className="responsive-container-block big-container" >
                 <div className="responsive-container-block textContainer">
