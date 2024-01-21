@@ -44,8 +44,8 @@ export const Zaposleni = () => {
         const {globalFilter, pageIndex, pageSize} = state;
   return (
     <div className='main'>
-        <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
         <div className='container-zaposleni'>
+        <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
         <table {...getTableProps()}>
                 <thead>
                     {headerGroups.map((headerGroup) => (
@@ -72,8 +72,7 @@ export const Zaposleni = () => {
                     })}
                 </tbody>
             </table>
-        </div>
-        <div className="pagination">
+            <div className="pagination">
             <p>
                 Page{' '}
                 <strong>
@@ -107,6 +106,8 @@ export const Zaposleni = () => {
                 {'>>'}
             </button>
         </div>
+        </div>
+        
     </div>
   )
 }

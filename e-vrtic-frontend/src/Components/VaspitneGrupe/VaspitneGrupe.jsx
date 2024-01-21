@@ -3,6 +3,7 @@ import podaci_vg from '../../data/VaspitneGrupe.json';
 import { ColumnFilter } from '../Lokacije/ColumnFilter';
 import { GlobalFilter } from '../Lokacije/GlobalFilter';
 import { useTable, useGlobalFilter, useFilters, usePagination, useSortBy } from 'react-table';
+import "./VaspitneGrupe.css"
 
 export const VaspitneGrupe = () => {
     console.log(podaci_vg.VaspitneGrupe);
@@ -35,10 +36,10 @@ export const VaspitneGrupe = () => {
         const {globalFilter, pageIndex, pageSize} = state;
 
   return (
-    <div className='main'>
+    <div className='main-vg'>
+        <div className='container-vg'>
         <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
-        <div className='container-zaposleni'>
-        <table style={{width: '900px'}} {...getTableProps()}>
+        <table {...getTableProps()}>
                 <thead>
                     {headerGroups.map((headerGroup) => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
@@ -64,8 +65,7 @@ export const VaspitneGrupe = () => {
                     })}
                 </tbody>
             </table>
-        </div>
-        <div className="pagination">
+            <div className="pagination-vg">
             <p>
                 Page{' '}
                 <strong>
@@ -99,6 +99,8 @@ export const VaspitneGrupe = () => {
                 {'>>'}
             </button>
         </div>
+        </div>
+        
     </div>
   )
 }
