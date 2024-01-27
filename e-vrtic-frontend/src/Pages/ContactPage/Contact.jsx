@@ -1,10 +1,36 @@
 import React from 'react';
 import './Contact.css';
 import BannerImage from '../../Components/Assets/background2.jpg'
+import axios from "axios";
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Contact = () => {
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const {firstName, lastName, email, phoneNumber, message} = e.target.elements;
+        try{
+            await axios.post('http://localhost:8080/api/contact', {
+                ime: firstName.value,
+                prezime: lastName.value,
+                email: email.value,
+                telefon: phoneNumber.value,
+                poruka: message.value
+            }).then(res => {
+                toast.success("User Contact Successfully!!!", {
+                    position: toast.POSITION.TOP_CENTER,
+                });
+                e.target.reset();
+            })
+        } catch(err) {
+            toast.error("User Contact Unsuccessfully!!!", {
+                position: toast.POSITION.TOP_CENTER,
+            });
+        }
+    }
   return (
     <div className='all-contact'>
+        <ToastContainer/>
         <div className="new_home_web" >
             <div className="responsive-container-block big-container" >
                 <div className="responsive-container-block textContainer">
@@ -20,30 +46,30 @@ export const Contact = () => {
                 </div>
                 <div className="responsive-container-block container">
                     <div className="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-7 wk-ipadp-10 line" id="i69b">
-                    <form className="form-box">
+                    <form className="form-box" onSubmit={handleSubmit}>
                         <div className="container-block form-wrapper">
                             <div className="responsive-container-block">
                                 <div className="left4">
                                 <div className="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6" id="i10mt-2">
-                                    <input className="input" id="ijowk-2" name="FirstName" placeholder="First Name"/>
-                                </div>
-                                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
-                                    <input class="input" id="indfi-2" name="Last Name" placeholder="Last Name"/>
+                                    <input className="input" id="firstName" name="FirstName" placeholder="First Name" required/>
                                 </div>
                                 <div className="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
-                                    <input className="input" id="ipmgh-2" name="Email" placeholder="Email Address"/>
+                                    <input className="input" id="lastName" name="Last Name" placeholder="Last Name" required/>
+                                </div>
+                                <div className="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                                    <input className="input" id="email" name="Email" placeholder="Email Address" required/>
                                 </div>
                                 <div className="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 lastPhone">
-                                    <input className="input" id="imgis-2" name="PhoneNumber" placeholder="Phone Number"/>
+                                    <input className="input" id="phoneNumber" name="PhoneNumber" placeholder="Phone Number" required/>
                                 </div>
                                 </div>
                                 <div className="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-2">
-                                <textarea className="textinput" id="i5vyy-2" placeholder="Message"></textarea>
+                                <textarea className="textinput" id="message" placeholder="Message" required></textarea>
                                 </div>
                             </div>
-                            <a className="send" href="#" id="w-c-s-bgc_p-1-dm-id">
+                            <button className="send" id="w-c-s-bgc_p-1-dm-id" type="submit">
                             Send
-                            </a>
+                            </button>
                         </div>
                     </form>
                     </div>

@@ -7,7 +7,7 @@ import axios from "axios";
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const LoginForm = () => {
+export const LoginForm = (props) => {
   const [unlock, setUnlock] = useState(false);
   const history = useHistory();
 
@@ -35,7 +35,6 @@ export const LoginForm = () => {
             position: toast.POSITION.TOP_CENTER,
         });
     }
-    
     // axios.get('http://localhost:8080/api/logIn', {
     // params : {
     //     username: username.value,
@@ -69,7 +68,7 @@ export const LoginForm = () => {
                 <a href='/logIn'>Forgot password?</a>
             </div>
 
-            <button type='submit'>Login</button>
+            <button type='submit' data-testid="submit">Login</button>
 
             <div className="register-link">
                 <p>Don't have an account? <Link to="/register">Register</Link></p>
