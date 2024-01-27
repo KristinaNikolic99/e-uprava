@@ -51,7 +51,8 @@ export const Vrtici = () => {
                             <a href='' onClick={(e) => {
                                 e.preventDefault();
                                 sessionStorage.getItem("korisnik") ?
-                                history.push('/child-registration') :
+                                history.push({pathname: '/child-registration', search: `?id=${vrtic.vrtic_id}`}) :
+                                //history.push('/child-registration/'+vrtic.vrtic_id) :
                                 history.push('/login')
                             }}>UPIŠI ME</a>
                         </div>

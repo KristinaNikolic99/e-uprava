@@ -3,10 +3,13 @@ import './ChildRegistration.css';
 import axios from "axios";
 import {ToastContainer, toast} from 'react-toastify';
 import jmbg from "regex-jmbg";
+import { useLocation } from 'react-router-dom';
 
 
 export const ChildRegistration = () => {
-
+    const location = useLocation();
+    const query = new URLSearchParams(location.search);
+    //console.log(query.get("id"))
     async function register_child(e) {
         e.preventDefault();
         const {childName, childSurname, childJmbg, birthday, gender} = e.target.elements;
@@ -14,7 +17,7 @@ export const ChildRegistration = () => {
         // console.log(JSON.parse(sessionStorage.getItem("korisnik")).korisnik_id);
         console.log(jmbg().test('1304005111059'));
 
-        if(!jmbg().test(childJmbg)) {
+        if(!jmbg().test(childJmbg.value)) {
             toast.error("Uneseni jmbg je nevalidan, pokusajte ponovo!!!", {
                 position: toast.POSITION.TOP_CENTER,
             });
@@ -29,7 +32,8 @@ export const ChildRegistration = () => {
                 jmbg: childJmbg.value,
                 datumRodjenja: birthday.value,
                 pol: gender.value,
-                korisnik_id: JSON.parse(sessionStorage.getItem("korisnik")).korisnik_id
+                korisnik_id: JSON.parse(sessionStorage.getItem("korisnik")).korisnik_id,
+                vrtic_id: query.get("id")
             });
             toast.success("Uspesno registrovano dete!!!", {
                 position: toast.POSITION.TOP_CENTER,
@@ -63,11 +67,11 @@ export const ChildRegistration = () => {
                     />
                 </div>
                 <div className='input-box-CR'>
-                    <label for='birthday'>Datum rođenja: </label>
+                    <label htmlFor='birthday'>Datum rođenja: </label>
                     <input type='date' id='birthday' required />
                 </div>
                 <div className='input-box-CR'>
-                    <label for='gender'>Pol: </label>
+                    <label htmlFor='gender'>Pol: </label>
                     <input type='radio' name='gender' id='gender' value='Musko'/> Muško
                     <input type='radio' name='gender' id='gender' value='Zensko'/> Žensko
                 </div>
