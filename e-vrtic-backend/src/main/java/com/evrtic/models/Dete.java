@@ -51,4 +51,8 @@ public class Dete {
 	@ManyToOne
 	@JoinColumn(name = "korisnik_id")
 	private Korisnik korisnik;
+	
+	@ManyToOne
+	@JoinColumn(name = "vrtic_id")
+	private Vrtic vrtic;
 }

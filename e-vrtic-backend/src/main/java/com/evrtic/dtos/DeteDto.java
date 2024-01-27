@@ -19,4 +19,5 @@ public class DeteDto {
 	private LocalDate datumRodjenja;
 	private String pol;
 	private long korisnik_id;
+	private long vrtic_id;
 }

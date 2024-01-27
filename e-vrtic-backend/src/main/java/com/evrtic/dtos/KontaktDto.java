@@ -9,15 +9,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class KorisnikDto {
-
+public class KontaktDto {
+	
 	private String ime;
 	private String prezime;
-	private String jmbg;
-	private String drzava;
-	private String grad;
 	private String email;
-	private String username;
-	private String password;
-	
+	private String telefon;
+	private String poruka;
+
 }
